@@ -1,5 +1,7 @@
 export default function createIteratorObject(report) {
-	while (report) {
-		console.log('Placeholder');
-	}
+  const inter = [];
+  for (const [k, v] of Object.entries(report)) {
+    if (v instanceof Array) inter.push(...v);
+  }
+  return inter;
 }
